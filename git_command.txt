@@ -1,0 +1,10 @@
+git add [file_name]
+git commit -m [commit_message]
+git push origin master
+git pull origin master
+git status
+git log --graph --oneline
+git remote add git@github.com:nukubukatik/note.git
+git remote set-url git@github.com:nukubukatik/note.git
+git config --global user.name nukubukatik
+git config --global user.email nukubukatik@gmail.com
