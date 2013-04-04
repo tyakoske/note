@@ -1,0 +1,22 @@
+yum vim install
+git clone git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+
+vimrc
+----------------------------------------------------
+set nocompatible
+filetype off 
+filetype plugin indent off 
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
+
+filetype plugin indent on
+NeoBundleCheck
+set number
+set syntax=on
+----------------------------------------------------
