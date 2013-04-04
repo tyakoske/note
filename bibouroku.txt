@@ -1,0 +1,2 @@
+yum log
+/var/log/yum.log
