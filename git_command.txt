@@ -6,6 +6,9 @@ git status
 git log --graph --oneline
 git remote add git@github.com:nukubukatik/note.git
 git remote set-url git@github.com:nukubukatik/note.git
+# show remote url
+git remote -v
 git config --global user.name nukubukatik
 git config --global user.email nukubukatik@gmail.com
+# set color
 git config --global color.ui auto
