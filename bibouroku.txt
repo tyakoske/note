@@ -1,2 +1,4 @@
-yum log
+#yum log
 /var/log/yum.log
+#show alias
+alias
