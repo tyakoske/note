@@ -2,3 +2,6 @@
 /var/log/yum.log
 #show alias
 alias
+#install ntp
+yum install ntp
+ntpdate ntp.nict.jp

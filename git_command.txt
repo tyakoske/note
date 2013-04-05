@@ -1,8 +1,14 @@
 git add [file_name]
+#test add
+git add -n [file_name]
+#remove file and index
+git rm [file_name]
 #remove only index
 git rm --cached [file_name]
 #remove directory
 git rm -r --cached [file_name]
+#test rm
+git rm -n [file_name]
 git commit -m [commit_message]
 git push origin master
 git pull origin master
@@ -10,9 +16,19 @@ git status
 git log --graph --oneline
 git remote add git@github.com:nukubukatik/note.git
 git remote set-url git@github.com:nukubukatik/note.git
+#show local branch
+git branch
+#show remote branch
+git branch -r
+#show all branch
+git branch -a
 # show remote url
 git remote -v
+#configuration git
 git config --global user.name nukubukatik
 git config --global user.email nukubukatik@gmail.com
+#local configuration
+git config user.name nukubukatik
+git config user.email nukubukatik@gmail.com
 # set color
 git config --global color.ui auto
