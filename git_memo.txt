@@ -1,0 +1,39 @@
+untracked(管理外)
+unmodified(管理内、変更点無)
+modified((管理内、変更点有)
+staged(管理内、コミット済)
+
+ -----------          ------------         ------------         ------------
+| untracked |        | unmodified |       |  modified  |       |   staged   |
+ -----------          ------------         ------------         ------------
+      |    add the file    |   edit the file    |   stage the file   |
+      |------------------->|------------------->|------------------->|
+      |                    |                    |                    |
+      |                    |                    |    edit the file   |
+      |                    |                    |<-------------------|
+      |                    |                    |                    |
+      |  remove the file   |                  commit                 |
+      |<-------------------|<----------------------------------------|
+      |                    |                    |                    |
+      |                    |                    |                    |
+      |                    |                    |                    |
+
+ファイルを作成
+untracked
+>$ touch test
+
+作成したファイルを追加
+untracked->unmodified
+>$ git add test
+
+ファイルを更新
+unmodified->modified
+>$ cat test > test
+
+更新されたファイルを追加
+modified->staged
+>$ git add test
+
+unmodifiedとstagedについて
+両方とも「git add test」でその状態になるが無変更と変更後のファイルになるのでgit上では別々のファイルとして扱われる
+

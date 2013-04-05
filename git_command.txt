@@ -16,12 +16,22 @@ git status
 git log --graph --oneline
 git remote add git@github.com:nukubukatik/note.git
 git remote set-url git@github.com:nukubukatik/note.git
+#create branch
+git branch [name]
+#chnage branch
+git checkout [name]
+#git branch [name] + git checkout [name]
+git checkout -b [name]
+#Delete branch
+git branch -d [name]
 #show local branch
 git branch
 #show remote branch
 git branch -r
 #show all branch
 git branch -a
+git reflog
+git reset
 # show remote url
 git remote -v
 #configuration git
