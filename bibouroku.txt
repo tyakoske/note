@@ -1,3 +1,5 @@
+#show PATH
+echo $PATH
 #yum log
 /var/log/yum.log
 #show alias
@@ -5,3 +7,44 @@ alias
 #install ntp
 yum install ntp
 ntpdate ntp.nict.jp
+/etc/init.d/ntpd start
+#install develop tools
+yum install httpd
+yum install ruby
+yum install wget
+yum install unzip
+yum install gcc
+yum install make
+#About RPM
+RPM=RedHat Package Manager
+ビルドやコンパイルの必要が無くなる
+間単にインストール、アップグレード、アンインストールが可能
+他のパッケージと依存関係の調査が可能
+※SPECファイルの記述が大変なのでcheckinstallを使用する
+#install checkinstall
+yum install gettext(install msgfmt)
+yum install rpm-build
+git clone http://checkinstall.izto.org/checkinstall.git
+chage configuration file -> see checkinstall_config.txt
+make && make install 
+cd /usr/local/src/checkinstall
+checkinstall
+#rpm command
+rpm -ivh [rpm_file]
+i...rpm package install
+v...show detail
+h...show install status
+rpm -qi [install_program]
+q...check package
+i...show detail
+rpm -qa
+a...all
+http://saminnet.dip.jp/servercomputer/Lmemo/system/rpmc.html
+#install ruby
+wget ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p392.zip
+mv ruby-1.9.3-p392.zip /usr/local/src
+unzip ruby-1.9.3-p392.zip 
+./configure --prefix=/usr/local
+make
+checkinstall --fstrans=no(disable the filesystem translation code)
+rpm -ivh --nodeps [ruby_rpm](依存関係無視)

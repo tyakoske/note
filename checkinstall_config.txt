@@ -1,0 +1,56 @@
+diff --git a/Makefile b/Makefile
+index 2e28adc..088481f 100644
+--- a/Makefile
++++ b/Makefile
+@@ -4,7 +4,8 @@
+ PREFIX=/usr/local
+ BINDIR=$(PREFIX)/sbin
+ LCDIR=$(PREFIX)/lib/checkinstall/locale
+-CONFDIR=$(PREFIX)/lib/checkinstall
++#CONFDIR=$(PREFIX)/lib/checkinstall
++CONFDIR=$(PREFIX)
+ 
+ all:
+ 	for file in locale/checkinstall-*.po ; do \
+diff --git a/checkinstall b/checkinstall
+index 978360f..dcdd166 100755
+--- a/checkinstall
++++ b/checkinstall
+@@ -891,7 +891,7 @@ shift
+ ! [ "$ARCHITECTURE" ] && ARCHITECTURE=""
+ 
+ # Default package type
+-! [ "$INSTYPE" ] && INSTYPE=""
++! [ "$INSTYPE" ] && INSTYPE="R"
+RPMパッケージ作成のみに設定
+ 
+ # Interactively show the results of the install command
+ # This is useful for interactive installation commands
+diff --git a/checkinstallrc-dist b/checkinstallrc-dist
+index d4feb4e..399133b 100644
+--- a/checkinstallrc-dist
++++ b/checkinstallrc-dist
+@@ -117,7 +117,8 @@ RESET_UIDS=0
+ NEW_SLACK=1
+ 
+ # Comma delimited list of files/directories to be ignored
+-EXCLUDE=""
++#EXCLUDE=""
++EXCLUDE="/selinux"
+ 
+ # Accept default values for all questions?
+ ACCEPT_DEFAULT=0
+diff --git a/installwatch/Makefile b/installwatch/Makefile
+index ae34fc1..87047e4 100644
+--- a/installwatch/Makefile
++++ b/installwatch/Makefile
+@@ -11,7 +11,8 @@ PREFIX=/usr/local
+ VERSION=0.7.0beta7
+ 
+ BINDIR=$(PREFIX)/bin
+-LIBDIR=$(PREFIX)/lib
++#LIBDIR=$(PREFIX)/lib
++LIBDIR=$(PREFIX)/lib64
+ 
+ all: installwatch.so
+ 
