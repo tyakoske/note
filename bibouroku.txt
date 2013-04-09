@@ -48,3 +48,7 @@ unzip ruby-1.9.3-p392.zip
 make
 checkinstall --fstrans=no(disable the filesystem translation code)
 rpm -ivh --nodeps [ruby_rpm](依存関係無視)
+#git_diff_wrapper
+#!/bin/sh
+vimdiff "$2" "$5"
+
